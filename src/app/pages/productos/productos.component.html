@@ -1,0 +1,121 @@
+<div class="page-header">
+  <div class="container">
+    <h1>Nuestras Prendas</h1>
+    <p>Descubre nuestra colección de ropa y accesorios para todos los estilos</p>
+  </div>
+</div>
+
+<section class="products-section">
+  <div class="container">
+    <div class="filters">
+      <h3>Filtrar por categoría:</h3>
+      <div class="filter-buttons">
+        <button 
+          *ngFor="let categoria of categorias" 
+          [class.active]="categoriaSeleccionada === categoria"
+          (click)="seleccionarCategoria(categoria)"
+          class="filter-btn">
+          {{ categoria }}
+        </button>
+      </div>
+    </div>
+
+    <div class="products-grid">
+      <div *ngFor="let producto of filtrarProductos()" class="product-card">
+        <div class="product-image">
+          <span class="product-emoji">{{ producto.imagen }}</span>
+        </div>
+        <div class="product-info">
+          <div class="product-category">{{ producto.categoria }}</div>
+          <h3 class="product-name">{{ producto.nombre }}</h3>
+          <p class="product-description">{{ producto.descripcion }}</p>
+          <div class="product-price">S/{{ producto.precio | number:'1.2-2' }}</div>
+          <button class="btn btn-primary">Comprar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container">
+    <h2>¿Por qué elegir nuestra tienda?</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">👗</div>
+        <h3>Tendencias</h3>
+        <p>Prendas modernas y estilosas para cada temporada.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">💎</div>
+        <h3>Calidad</h3>
+        <p>Materiales premium y confección cuidada en cada producto.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🚚</div>
+        <h3>Envío Rápido</h3>
+        <p>Recibe tus compras en la puerta de tu casa en tiempo récord.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🔄</div>
+        <h3>Cambios y Devoluciones</h3>
+        <p>Compra sin preocupaciones, puedes cambiar o devolver tus prendas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section">
+  <div class="container">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"La ropa es hermosa y de excelente calidad. ¡Me encantó la atención!"</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩</div>
+          <div class="author-info">
+            <h4>Ana Martínez</h4>
+            <span>Cliente</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"Recibí mi pedido muy rápido y todo llegó perfecto. ¡Recomiendo Moda Urbana!"</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">👨</div>
+          <div class="author-info">
+            <h4>Roberto Silva</h4>
+            <span>Cliente</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"Gran variedad de estilos y tallas. Siempre encuentro lo que busco."</p>
+        </div>
+        <div class="testimonial-author">
+          <div class="author-avatar">👩‍🦰</div>
+          <div class="author-info">
+            <h4>Laura González</h4>
+            <span>Cliente</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>¿Necesitas ayuda para elegir tu prenda?</h2>
+    <p>Nuestro equipo está listo para asesorarte en tu compra</p>
+    <div class="cta-buttons">
+      <a href="mailto:ventas@modaurbana.com" class="btn btn-primary">Contactar Ventas</a>
+      <a routerLink="/nosotros" class="btn btn-secondary">Conocer Más</a>
+    </div>
+  </div>
+</section>
